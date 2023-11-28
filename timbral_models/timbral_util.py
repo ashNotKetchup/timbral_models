@@ -53,7 +53,7 @@ def get_percussive_audio(audio_samples, return_ratio=True):
                             If False, the function returns the percussive audio as a time domain array.
     """
     # use librosa decomposition
-    D = librosa.core.stft(audio_samples)
+    D = librosa.core.stft(y=audio_samples)
     H, P = librosa.decompose.hpss(D)
 
     # inverse transform to get time domain arrays
@@ -1810,7 +1810,7 @@ def check_upsampling(audio_samples, fs, lowest_fs=44100):
     """
     if fs < lowest_fs:
         # upsample file to avoid errors when calculating specific loudness
-        audio_samples = librosa.core.resample(audio_samples, fs, lowest_fs)
+        audio_samples = librosa.core.resample(y=audio_samples, orig_sr=fs, target_sr=lowest_fs)
         fs = lowest_fs
 
     return audio_samples, fs
