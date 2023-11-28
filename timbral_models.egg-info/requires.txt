@@ -3,3 +3,5 @@ soundfile
 scipy
 librosa
 sklearn
+pyloudnorm
+six
