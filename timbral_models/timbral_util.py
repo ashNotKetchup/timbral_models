@@ -1768,6 +1768,10 @@ def file_read(fname, fs=0, phase_correction=False, mono_sum=True, loudnorm=True,
         # use pysoundfile to read audio
         audio_samples, fs = sf.read(fname, always_2d=False)
 
+    # elif isinstance(fname, float):
+        # audio_samples = fname   //but then how do we get sample rate? TODO: use this for optimising later
+
+
     elif hasattr(fname, 'shape'):
         if fs==0:
             raise ValueError('If giving function an array, \'fs\' must be specified')
