@@ -3,7 +3,7 @@ import numpy as np
 import soundfile as sf
 from scipy.signal import spectrogram
 import scipy.stats
-from sklearn import linear_model
+from scikit-learn import linear_model
 from . import timbral_util
 
 
