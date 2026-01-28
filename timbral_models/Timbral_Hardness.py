@@ -74,7 +74,7 @@ def timbral_hardness(fname, fs=0, dev_output=False, phase_correction=False, clip
     '''
     # zero pad the signal
     nperseg = 4096  # default value for spectrogram analysis
-    audio_samples = np.lib.pad(audio_samples, (nperseg+1, 0), 'constant', constant_values=(0.0, 0.0))
+    audio_samples = np.pad(audio_samples, (nperseg+1, 0), 'constant', constant_values=(0.0, 0.0))
 
     '''
       Calculate the envelope and onsets
